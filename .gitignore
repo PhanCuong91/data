@@ -1,0 +1,4 @@
+/renode/build/*
+/renode/logs/*
+/renode/snapshots/*
+*.pyc

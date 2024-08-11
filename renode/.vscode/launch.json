@@ -11,6 +11,13 @@
             "cwd": "${workspaceRoot}",
             "miDebuggerPath": "arm-none-eabi-gdb",
             "program": "${workspaceRoot}/build/src/STM32F4Template.elf"
-        }
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
     ]
 }
