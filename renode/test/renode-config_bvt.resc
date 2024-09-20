@@ -2,8 +2,8 @@
 :description: This script runs the usart_printf example on stm32f4 discovery
 
 $name?="STM32F4_Discovery"
-$cmm_repl?="C:\working\data\renode\add-ccm.repl"
-$bin_path?="C:\working\data\renode\build\src\STM32F4Template.elf"
+$cmm_repl?=$ORIGIN\..\add-ccm.repl
+$bin_path?=$ORIGIN\..\build\src\STM32F4Template.elf
 
 # Create Machine & Load config
 mach create $name

@@ -1,4 +1,4 @@
-# Filename: test-button.robot
+# Filename: test-renode.robot
 *** Settings ***
 Suite Setup                     Setup
 Suite Teardown                  Teardown
