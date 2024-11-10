@@ -1,0 +1,10 @@
+include(default)
+[settings]
+[options]
+
+[build_requires]
+cmake/3.29.7@pcuong_server/stable
+renode/1.15.1@pcuong_server/stable
+GNUArmEmbeddedToolChain/10.3.0-202110@pcuong_server/stable
+make/4.4.1@pcuong_server/stable
+[env]
