@@ -4,7 +4,7 @@ set(sources
     system_stm32f4xx.c
     startup_stm32f40_41xxx.s
 )
-
+# add_compile_options(-finstrument-functions)
 # GCC optimization level: use -O0 in debug build, otherwise -O2
 if(CMAKE_BUILD_TYPE MATCHES Debug)
   set(opt_level -O0)
@@ -36,7 +36,7 @@ target_link_libraries(${elf_file} PUBLIC "-g -Wl,--gc-sections")
 
 # link with linker file
 target_link_libraries(${elf_file} PUBLIC -T${LINKER_SCRIPT})
-
+target_link_libraries(${elf_file} PUBLIC ctrace)
 # show size of resulting firmware image
 add_custom_target(${elf_file}-size DEPENDS ${elf_file} COMMAND ${ARM_SIZE_EXECUTABLE} -B ${elf_file})
 

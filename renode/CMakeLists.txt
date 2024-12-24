@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 2.8.12)
+cmake_minimum_required (VERSION 3.0.0)
 
 # set the build type
 if(NOT CMAKE_BUILD_TYPE) 
@@ -40,5 +40,10 @@ get_filename_component(OPENOCD_CONFIG tools/stm32f4discovery.cfg ABSOLUTE)
 # add libraries
 add_subdirectory(lib)
 
+add_subdirectory(./pkg/ctrace)
+
+
 # add main project
 add_subdirectory(src)
+
+

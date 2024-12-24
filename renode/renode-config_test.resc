@@ -1,6 +1,8 @@
 :name: STM32F4 Discovery Printf
 :description: This script runs the usart_printf example on stm32f4 discovery
 
+#logFile $ORIGIN/STM32F4-renode.log True
+
 $name?="STM32F4_Discovery"
 $cmm_repl?=$ORIGIN\add-ccm.repl
 $bin_path?=$ORIGIN\build\src\STM32F4Template.elf
@@ -14,12 +16,14 @@ machine LoadPlatformDescription $cmm_repl
 showAnalyzer sysbus.usart2
 
 # Enable GDB
-# machine StartGdbServer 3333
-
+machine StartGdbServer 3333
+#sysbus.cpu EnableProfilerCollapsedStack $ORIGIN/test-profile true
+#sysbus.cpu EnableProfilerPerfetto  $ORIGIN/test-profile_t true
 macro reset
 """
-    sysbus LoadELF $bin_path 
+    sysbus LoadELF $bin_path
 """
 
 runMacro $reset
-start
+#start
+

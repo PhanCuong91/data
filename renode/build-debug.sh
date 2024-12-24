@@ -14,6 +14,10 @@ echo $PATH
 mkdir build
 cd build && cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -D "CMAKE_TOOLCHAIN_FILE=../CMake/GNU-ARM-Toolchain.cmake" ../
 make
-cd ./../
-renode ./renode-config_test.resc
+if [ $? -ne 0 ]; then
+    echo "make comand failed with exist code $?"
+    exit 1
+fi
+# cd ./../
+# renode ./renode-config_test.resc
 
